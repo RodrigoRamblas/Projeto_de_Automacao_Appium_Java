@@ -1,6 +1,7 @@
 package lello.appium.page.MorarPages;
 
 import lello.appium.core.BasePage;
+import org.openqa.selenium.By;
 
 public class MorarMenuPage extends BasePage {
 
@@ -30,6 +31,16 @@ public class MorarMenuPage extends BasePage {
 	public void acessarCorrespondencias(){clicarContent("Correspondências");}
 
 	public void acessarOcorrências(){clicarContent("Ocorrências");}
+
+	public void registrarNovaOcorrênciaSemAnexo(){
+		clicarContent("Registrar nova ocorrência");
+		clicarContent("Escolha uma opção");
+		clicarContent("Elogios");
+		clicarPorTexto("Escreva aqui.");
+		escrever(By.className("android.widget.EditText"), "teste");
+		clicar(By.xpath("//android.view.View[@index='5']"));
+		clicar(By.xpath("//android.widget.Button[@index='2']"));
+	}
 
 	public void acessarAutorizarEntrada(){clicarContent("Autorizar Entrada");}
 

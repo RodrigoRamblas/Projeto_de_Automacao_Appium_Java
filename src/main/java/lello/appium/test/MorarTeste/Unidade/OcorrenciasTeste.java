@@ -27,8 +27,13 @@ public class OcorrenciasTeste {
         Thread.sleep(4000);
     }
     @Test
-    public void aaa () {
+    public void OcorrênciasFlagOcorrênciaPúblicaTipoNãoSemAnexo () {
         menu.acessarUnidade();
         menu.acessarOcorrências();
+        menu.registrarNovaOcorrênciaSemAnexo();
+        //menu.enviarOcorrencia();
+        //menu.validarMensagemDeSucesso("Ocorrência registrada com sucesso");
+        //menu.minhasOcorrências();
     }
 }
+

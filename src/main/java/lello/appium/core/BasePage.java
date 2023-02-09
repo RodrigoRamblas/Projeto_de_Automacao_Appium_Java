@@ -19,18 +19,19 @@ public class BasePage {
 	}
 	public void escreverCPFOuCNPJ(By by, String cpfOuCPNPJ) { DriverFactory.getDriver().findElement(by).sendKeys(cpfOuCPNPJ);	}
 	public String obterTexto(By by) {return DriverFactory.getDriver().findElement(by).getText();	}
-
 	public String obterTextoPorContentDesc(String name) {return DriverFactory.getDriver().findElementByName(""+name+"").getText();	}
 	public void clicar(By by) {
         DriverFactory.getDriver().findElement(by).click();	}
+
 	public void clicarContent(String contentDesc){
         DriverFactory.getDriver().findElementByAccessibilityId(""+contentDesc+"").click();}
 
-	public void clicarName(String name){	DriverFactory.getDriver().findElementByName(""+name+"").click();}
+	public void clicarName(String name){ DriverFactory.getDriver().findElementByName(""+name+"").click();}
 	
 	public void clicarPorTexto(String texto) {clicar(By.xpath("//*[@text='"+texto+"']"));}
 	public void selecionarCombo(By by, String valor) {
         DriverFactory.getDriver().findElement(by).click();clicarPorTexto(valor);}
+
 	public boolean isCheckMarcado(By by) {
 		return DriverFactory.getDriver().findElement(by).getAttribute("checked").equals("true");
 	}
