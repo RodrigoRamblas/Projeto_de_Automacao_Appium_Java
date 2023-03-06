@@ -16,7 +16,7 @@ public class MorarSplashPage extends BasePage {
 	}
 	
 	public void aguardarSplashSumir(){
-		DriverFactory.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+		//DriverFactory.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
 		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 10);
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@content-desc='Lello para Moradores']")));
 	}

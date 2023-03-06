@@ -30,9 +30,9 @@ public class MorarMenuPage extends BasePage {
 
 	public void acessarCorrespondencias(){clicarContent("Correspondências");}
 
-	public void acessarOcorrências(){clicarContent("Ocorrências");}
+	public void acessarOcorrencias(){clicarContent("Ocorrências");}
 
-	public void registrarNovaOcorrênciaSemAnexo(){
+	public void registrarNovaOcorrenciaSemAnexo(){
 		clicarContent("Registrar nova ocorrência");
 		clicarContent("Escolha uma opção");
 		clicarContent("Elogios");

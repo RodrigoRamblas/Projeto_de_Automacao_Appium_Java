@@ -30,7 +30,7 @@ public class DriverFactory {
         desiredCapabilities.setCapability("deviceName", "nada");
         desiredCapabilities.setCapability("automationName", "uiautomator2");
 //        desiredCapabilities.setCapability("noReset", true);
-        desiredCapabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\rodri\\Documents\\Rodrigo Carlos\\LelloMobileTest\\src\\main\\resources\\app-release.apk");
+        desiredCapabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\rodrigo.ramblas\\Documents\\LelloMobileTest\\src\\main\\resources\\app-release.apk");
 //        desiredCapabilities.setCapability("appWaitPackage", "com.google.android.permissioncontroller");
 //        desiredCapabilities.setCapability("appWaitActivity", "com.android.packageinstaller.permission.ui.ReviewPermissionsActivity");
         try {
@@ -38,7 +38,7 @@ public class DriverFactory {
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 //        driver.findElement(By.xpath("//android.widget.Button[@text='Continue']")).click();
 //        driver.findElement(By.xpath("//*[@text='OK']")).click();
     }

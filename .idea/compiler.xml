@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="LelloMorador" />
         <module name="LelloMobileTest" />
+        <module name="Projeto_de_Automacao_Appium_Java" />
       </profile>
     </annotationProcessing>
   </component>

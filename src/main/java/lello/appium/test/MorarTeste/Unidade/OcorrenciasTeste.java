@@ -29,8 +29,8 @@ public class OcorrenciasTeste {
     @Test
     public void OcorrênciasFlagOcorrênciaPúblicaTipoNãoSemAnexo () {
         menu.acessarUnidade();
-        menu.acessarOcorrências();
-        menu.registrarNovaOcorrênciaSemAnexo();
+        menu.acessarOcorrencias();
+        menu.registrarNovaOcorrenciaSemAnexo();
         //menu.enviarOcorrencia();
         //menu.validarMensagemDeSucesso("Ocorrência registrada com sucesso");
         //menu.minhasOcorrências();
