@@ -1,0 +1,13 @@
+{
+    "texto": "Texto do teste automatizado",
+    "nao": "Não",
+    "sim": "Sim",
+    "assunto":
+            [
+                "Elogios",
+                "Sugestões",
+                "Reclamações",
+                "Outros"
+            ],
+    "mensagem": "Ocorrência registrada com sucesso"
+}

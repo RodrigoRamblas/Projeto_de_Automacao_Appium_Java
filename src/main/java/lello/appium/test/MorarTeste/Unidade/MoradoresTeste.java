@@ -32,7 +32,7 @@ public class MoradoresTeste extends BaseTest {
     }
 
     @Test
-    public void adicionarNovoUsuário(){
+    public void adicionarNovoUsuário() throws InterruptedException {
         menu.acessarUnidade();
         menu.acessarMoradores();
         moradores.adicionarUmNovoUsuario();

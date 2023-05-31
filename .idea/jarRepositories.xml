@@ -2,11 +2,6 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
-      <option name="id" value="atomic-framework" />
-      <option name="name" value="atomic-framework" />
-      <option name="url" value="https://maven.pkg.github.com/atomicsolutions/atomic-framework" />
-    </remote-repository>
-    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
       <option name="url" value="https://repo.maven.apache.org/maven2" />
@@ -22,14 +17,9 @@
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="central" />
-      <option name="name" value="central" />
-      <option name="url" value="https://repo1.maven.org/maven2" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="proton-lib" />
-      <option name="name" value="proton-lib" />
-      <option name="url" value="https://maven.pkg.github.com/atomicsolutions/proton-lib" />
+      <option name="id" value="sonatype-snapshots" />
+      <option name="name" value="Sonatype Jetty Snapshots" />
+      <option name="url" value="https://oss.sonatype.org/content/groups/jetty" />
     </remote-repository>
   </component>
 </project>

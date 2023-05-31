@@ -1,63 +1,58 @@
 package lello.appium.test.MorarTeste.Unidade;
 
+import lello.appium.core.ConvertJson;
+import lello.appium.page.MorarPages.AutorizarEntradaPage;
 import lello.appium.page.MorarPages.MorarLoginPage;
 import lello.appium.page.MorarPages.MorarMenuPage;
-import lello.appium.page.MorarPages.MorarSplashPage;
-import lello.appium.page.MorarPages.AutorizarEntradaPage;
+import lello.appium.page.MorarPages.MorarSkipPage;
+import org.json.simple.parser.ParseException;
 import org.junit.Before;
 import org.junit.Test;
 
-public class AutorizarEntradaTeste {
+import java.io.IOException;
+import java.util.List;
 
-    private MorarSplashPage splash = new MorarSplashPage();
+
+public class AutorizarEntradaTeste extends ConvertJson {
+
     private MorarLoginPage login = new MorarLoginPage();
+    private final MorarSkipPage skip = new MorarSkipPage();
     private MorarMenuPage menu = new MorarMenuPage();
-    private AutorizarEntradaPage unidade = new AutorizarEntradaPage();
+
+    private final String jsonLogin = "src/main/java/lello/appium/data/login/login.json";
+    private final String jsonAutorizar = "src/main/java/lello/appium/data/autorizar/autorizar.json";
+
 
     @Before
-    public void setup() throws InterruptedException {
-        splash.aguardarSplashSumir();
-        Thread.sleep(1000);
-        menu.pular();
-        Thread.sleep(1000);
-        login.setCPFouCNPJ("39604838806");
-        Thread.sleep(1000);
-        login.setSenha("12345");
-        Thread.sleep(3000);
+    public void setup() throws InterruptedException, IOException, ParseException {
+        List loginUP = Login(jsonLogin);
+        skip.clicarEmProximo();
+        menu.singUp();
+        login.fecharPopUp();
+        login.setCPFouCNPJ(loginUP.get(0).toString());
+        login.setSenha(loginUP.get(1).toString());
         login.clicarEntrar();
-        Thread.sleep(3000);
+        login.clicarClose();
         login.clicarForaDoPopUp();
-        Thread.sleep(4000);
     }
 
     @Test
-    public void cadastrarVisitanteInterforne() throws InterruptedException {
-        menu.acessarUnidade();
-        unidade.clicarAutorizarEntrada();
-        unidade.clicarCadastrarNovoVisitante();
-        unidade.clicarNomeVisitante();
-        unidade.escreverNomeVisitante();
-        Thread.sleep(4000);
-        unidade.clicarCPFVisitante();
-        Thread.sleep(4000);
-        unidade.escreverCPFVisitante();
-        unidade.clicarEmSalvar();
-        unidade.clicarEmConcluir();
+    public void AutorizarEntradaInterfonePontual() throws Exception {
+        List autorizarUP = Autorizar(jsonAutorizar);
+        List tipoAcesso = (List) autorizarUP.get(3);
+        menu.acessarAutorizar();
+        menu.cadastroNovoVisitante(autorizarUP.get(0).toString(), tipoAcesso.get(0).toString());
+        menu.validarMensagemDeSucessoAutorizar(autorizarUP.get(2).toString());
+        menu.clicarEmConcluir();
     }
 
     @Test
-    public void cadastrarPrestadorInterfone(){
-        menu.acessarUnidade();
-        unidade.clicarAutorizarEntrada();
-        unidade.clicarAbaPrestadores();
-        unidade.clicarCadastrarNovoPrestador();
-        unidade.clicarNomeNovoPrestador();
-        unidade.escreverNomePrestador();
-        unidade.clicarCPFNovoPrestador();
-        unidade.escreverCPFNovoPrestador();
-        unidade.clicarNomeNovaEmpresa();
-        unidade.escreverCPFNovaEmpresa();
-        unidade.clicarEmVoltar();
-        unidade.clicarEmSalvarPrestador();
+    public void AutorizarEntradaAcessoDiretoRecorrente() throws Exception {
+        List autorizarUP = Autorizar(jsonAutorizar);
+        List tipoAcesso = (List) autorizarUP.get(3);
+        menu.acessarAutorizar();
+        menu.cadastroNovoVisitante(autorizarUP.get(1).toString(), tipoAcesso.get(1).toString());
+        menu.validarMensagemDeSucessoAutorizar(autorizarUP.get(2).toString());
+        menu.clicarEmConcluir();
     }
 }

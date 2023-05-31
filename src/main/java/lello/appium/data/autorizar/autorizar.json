@@ -1,0 +1,11 @@
+{
+  "interfonar": "Interfonar",
+  "acesso direto": "Acesso Direto",
+  "mensagem": "Cadastro do visitante criado com sucesso",
+  "tipoAcesso":
+         [
+             "Pontual",
+             "Recorrente"
+         ]
+
+}
